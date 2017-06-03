@@ -3,7 +3,7 @@ interface WorkItemSchema {
     cover: string;
     description: string;
     tech: string[];
-    type: string;
+    cat: string;
     images?: string[] | undefined;
     client?: string | undefined;
     date?: Date | undefined;
