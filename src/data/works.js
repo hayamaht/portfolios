@@ -1,7 +1,15 @@
 const workData = [{
-    "name": "ABC"
+    name: "ABC",
+    cover: 'images/a.jpg',
+    description: 'aasdasdasd',
+    tech: ['WordPress', 'PHP', 'MySQL'],
+    cat: 'Web',
 }, {
-     "name": "EEF"
+    name: "BBBB",
+    cover: 'images/a.jpg',
+    description: 'aasdasdasd',
+    tech: ['WordPress', 'PHP', 'MySQL'],
+    cat: 'Graphics',
 }];
 
 export default workData;
