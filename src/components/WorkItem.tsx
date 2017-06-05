@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Col, Row, Image, Button } from 'react-bootstrap';
+import { Col, Row, Image, Button, Label } from 'react-bootstrap';
 import WorkItemSchema from '../schema/WorkItemSchema';
+
+import './WorkItem.css';
 
 interface WorkItemProps {
     data: WorkItemSchema;
@@ -29,27 +31,41 @@ class WorkItem extends React.Component<WorkItemProps, null> {
             workInfo.push({ name: 'Date', value: data.date.toDateString() });
         }
 
-        workInfo.push({ name: 'Tech', value: data.tech.join(',') });
-
         return (
             <Row className="WorkItem">
                 <Col md={7}>
-                    <Image responsive={true} src={data.cover} />
+                    <div className="cover">
+                        <a href="#">
+                            <Image responsive={true} src={data.cover} />
+                        </a>
+                    </div>
                 </Col>
                 <Col md={5}>
-                    <h3>{data.name}</h3>
-                    <p>{data.description}</p>
-                    <ul className="workInfo">
-                        {workInfo.map((it, i) => {
-                            return (
-                                <li key={i}>
-                                    <span>{it.name}: </span>
-                                    <span>{it.value}</span>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                    {linkButton}
+                    <div className="workContent">
+                        <h3>{data.name}</h3>
+                        <h4 className="cat"><Label>{data.cat}</Label></h4>
+                        <p className="desc">{data.description}</p>
+                        <ul className="workInfo">
+                            {workInfo.map((it, i) => {
+                                return (
+                                    <li key={i}>
+                                        <span>{it.name}: </span>
+                                        <span>{it.value}</span>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <h4 className="tech">
+                            {data.tech.map((it, i) => {
+                                return (
+                                    <Label bsStyle="info" key={i}>{it}</Label>
+                                );
+                            })}
+                        </h4>
+                    </div>
+                    <div className="workUrl">
+                        {linkButton}
+                    </div>
                 </Col>
             </Row>
         );

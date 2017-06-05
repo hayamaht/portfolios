@@ -1,0 +1,31 @@
+.WorkItem {
+    margin: 20px 0;
+}
+
+.cover {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.cover a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.cover a > img {
+    width: 100%;
+}
+
+.desc {
+    margin: 20px 0;
+}
+
+.tech .label {
+    margin-right: 5px;
+}
