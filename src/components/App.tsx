@@ -1,28 +1,31 @@
 import * as React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Route, Link, Switch } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Portfolios from './Portfolios';
 import WorkList from '../containers/WorkList';
 
-interface AppProps {
-    onFetch?: (cat?: string) => void;
-}
+import './App.css';
 
-const App = ({ onFetch }: AppProps) => {
+const App = () => {
     return (
-        <div className="App">
-            <Navbar fixedTop={true}>
-                <Navbar.Header>
-                <Navbar.Brand>
-                    <a role="button" onClick={() => onFetch!()}>hayama.portfolios</a>
-                </Navbar.Brand>
-                </Navbar.Header>
-                <Nav>
-                <NavItem eventKey={1} onClick={() => onFetch!('Web')}>Web</NavItem>
-                <NavItem eventKey={2} onClick={() => onFetch!('Software')}>Software</NavItem>
-                <NavItem eventKey={3} onClick={() => onFetch!('Game')}>Game</NavItem>
-                <NavItem eventKey={4} onClick={() => onFetch!('Graphics')}>Graphics</NavItem>
-                </Nav>
-            </Navbar>
-            <WorkList />
+        <div className="app">
+            <div className="header">
+                <h1 className="sitename">
+                    <Link to="/">{'{ hayama }'}</Link>
+                </h1>
+                <ul className="menu">
+                    <li className="worksLink" ><Link to="/works/all">works</Link></li>
+                    <li className="aboutLink" ><Link to="/about">about</Link></li>
+                </ul>
+            </div>
+            
+            <Switch>
+                <Route exact={true} path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/portfolios/:filter" component={Portfolios} />
+                <Route path="/w" component={WorkList} />
+            </Switch>
         </div>
     );
 };

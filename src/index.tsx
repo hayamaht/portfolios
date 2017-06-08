@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
 import { works } from './reducers';
 import * as actions from './actions';
 import { StoreState } from './types/index';
-import App from './containers/App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -14,7 +15,9 @@ store.dispatch(actions.fetchWorks());
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

@@ -1,0 +1,71 @@
+.home {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.home h2 {
+    font-weight: bold;
+    color: #000;
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.home h2::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: url("/images/fm.jpg") no-repeat center center;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #999;
+    margin: 20px auto;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.skills {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.skills li,
+.misc li {
+    margin-right: 10px;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.html { background: url("/images/html.png") no-repeat center center; }
+.css { background: url("/images/css.png") no-repeat center center; }
+.js { background: url("/images/js.png") no-repeat center center; }
+.nodejs { background: url("/images/nodejs.png") no-repeat center center; }
+.swift { background: url("/images/swift.png") no-repeat center center; }
+.photoshop { background: url("/images/photoshop.png") no-repeat center center; }
+.illustrator { background: url("/images/illustrator.png") no-repeat center center; }
+.playstation { background: url("/images/playstation.png") no-repeat center center; }
+.steam { background: url("/images/steam.png") no-repeat center center; }
+
+.misc {
+    clear: both;
+}
+
+.misc div::after {
+    content: '\2764';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 10px auto 0 auto;
+    color: palevioletred;
+}
+
+.misc ul {
+    margin: 10px auto;
+    text-align: center;
+}
