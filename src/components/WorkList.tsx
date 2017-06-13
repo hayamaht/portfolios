@@ -1,25 +1,23 @@
 import * as React from 'react';
-import { Grid } from 'react-bootstrap';
-import { RouteComponentProps } from 'react-router-dom';
 import WorkItem from './WorkItem';
 import WorkItemSchema from '../schema/WorkItemSchema';
 
-export interface WorkListProps extends RouteComponentProps<{}> {
+export interface WorkListProps {
+    cat?: string | undefined;
     works?: WorkItemSchema[] | undefined;
-    // onFetch?: (cat?: string) => void;
 }
 
 const WorkList = ({ works }: WorkListProps ) => {
     return (works) ? (
-        <Grid className="WorkList">
+        <div className="work-llist">
             { works.map((it, i) => {
                 return (
                     <WorkItem key={i} data={it} />
                 );
             })}
-        </Grid>
+        </div>
     ) : (
-        <div className="WorkList">No Data</div>
+        <div className="work-list">No Data</div>
     );
 };
 

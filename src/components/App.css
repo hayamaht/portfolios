@@ -1,30 +1,35 @@
-.header {
-    width: 100%;
-    background-color: #fff;
-}
-
-.header a {
-    color: #95989A;
-    text-decoration: none;
-    border-bottom: 1px solid #95989A;
-    transition: all 1s ease-in-out;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-}
-
-.header a:hover {
-    color: #000;
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #fff url("/images/bg-yama.png") repeat 0 0;
 }
 
 .sitename {
-    width: 100%;
+    font-size: 1em;
     height: 160px;
     margin: 0;
     padding: 0;
     display: block;
     text-align: center;
-    background: url("/images/logo.png") no-repeat center center;
     color: #95989A;
+}
+
+.sitename-green {
+    width: 100%;
+    background: #fff url("/images/logo.png") no-repeat center center;
+}
+
+.sitename-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    background: #BCD64D url("/images/logo_white.png") no-repeat center center;
+    z-index: 2;
+}
+
+.sitename-white a {
+    color: white;
 }
 
 .sitename a {
@@ -37,35 +42,55 @@
     cursor: pointer;
 }
 
-.menu {
+.submenu {
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    background: #BCD64D;
+}
+
+ul.submenu {
+    padding: 0;
+    margin: 0;
+    padding-top: 250px;
+}
+
+ul.submenu li {
+    list-style: none;
+}
+
+ul.submenu a {
+    color: white;
     display: block;
-    /*margin-top: -20px;*/
     width: 100%;
-    pointer-events: none;
+    line-height: 2em;
+    text-align: center;
 }
 
-.menu li {
-    display: inline-block;
-    width: 50%;
+.content {
+  padding: 10px 50px;
+  margin-left: 180px;
+  background: #fff;
+  height: 100%;
 }
 
-.menu a {
-    padding: 0 5px;
-    pointer-events: auto;
+/**
+    Transition
+ */
+.page-appear {
+  opacity: 0.01;
 }
 
-.menu a:hover {
-    border-bottom: 1px solid #BCD64D;
+.page-appear.page-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
 }
 
-.worksLink a {
-    margin-left: 5%;
+.page-leave {
+  opacity: 1;
 }
 
-.aboutLink {
-    text-align: right;
-}
-
-.aboutLink a {
-    margin-right: 5%;
+.page-leave.page-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

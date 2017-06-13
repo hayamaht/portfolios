@@ -1,7 +1,51 @@
+.header {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.header a {
+    color: #95989A;
+    text-decoration: none;
+    border-bottom: 1px solid #95989A;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+}
+
+.header a:hover {
+    color: #000;
+}
+
+.menu {
+    display: block;
+    /*margin-top: -20px;*/
+    width: 100%;
+    pointer-events: none;
+}
+
+.menu li {
+    display: inline-block;
+    width: 50%;
+}
+
+.menu a {
+    padding: 0 5px;
+    pointer-events: auto;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid #BCD64D;
+}
+
+.worksLink a { margin-left: 5%; }
+.aboutLink a { margin-right: 5%; }
+.worksLink { text-align: left; }
+.aboutLink { text-align: right; }
+
 .home {
     width: 100%;
     text-align: center;
-    margin-top: 30px;
 }
 
 .home h2 {
@@ -28,6 +72,7 @@
 }
 
 .skills {
+    padding: 0;
     margin: 40px auto;
     text-align: center;
 }
@@ -40,6 +85,11 @@
     height: 64px;
     text-indent: -9999px;
     overflow: hidden;
+}
+
+.skills li:last-child,
+.misc li:last-child {
+    margin-right: 0;
 }
 
 .html { background: url("/images/html.png") no-repeat center center; }
@@ -66,6 +116,7 @@
 }
 
 .misc ul {
+    padding: 0;
     margin: 10px auto;
     text-align: center;
 }
